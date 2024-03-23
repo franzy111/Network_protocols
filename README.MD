@@ -4,7 +4,7 @@
 # Запуск:
 *Установить зависимости:*
 ```angular2html
-pip install - r requirements.txt
+pip install -r requirements.txt
 ```
 *Запуск скрипта:*
 ```
