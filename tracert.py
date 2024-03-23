@@ -16,7 +16,6 @@ def info_about_ip(query):
     ans = requests.get(f"http://ip-api.com/json/{query}?fields=27137")
     if ans.status_code == 200:
         info = ans.json()
-        print(info)
         if info["status"] == "success":
             return [info["query"], info["as"].split()[0], info["country"], info["isp"]]
         else:
