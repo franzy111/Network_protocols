@@ -17,7 +17,10 @@ def info_about_ip(query):
     if ans.status_code == 200:
         info = ans.json()
         if info["status"] == "success":
-            return [info["query"], info["as"].split()[0], info["country"], info["isp"]]
+            if info["as"] != "":
+                return [info["query"], info["as"].split()[0], info["country"], info["isp"]]
+            else:
+                return [info["query"], "Nil", info["country"], info["isp"]]
         else:
             return [query, "local", "local", "local"]
     else:
